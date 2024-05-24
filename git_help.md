@@ -6,8 +6,8 @@ $ git --version
 ```
 # Basic Configuration
 ```
-$ git config --global user.name "ramsatyam"
-$ git config --global user.email "ram.drsn@gmail.com
+$ git config --global user.name "username"
+$ git config --global user.email "email@gmail.com
 $ git config --global push.default "simple"
 ```
 # Clone the central repository
