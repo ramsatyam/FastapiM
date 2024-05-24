@@ -1,4 +1,5 @@
 # Git
+Welcome, this guide provide basic information required for using git in your project.
 ```
 $ which git
 $ git --version
@@ -6,7 +7,7 @@ $ git --version
 # Basic Configuration
 ```
 $ git config --global user.name "ramsatyam"
-$ git confign --global user.email "ram.drsn@gmail.com
+$ git config --global user.email "ram.drsn@gmail.com
 $ git config --global push.default "simple"
 ```
 # Clone the central repository
@@ -38,14 +39,18 @@ $ git branch <new_branch_name>     => To create a branch
 $ git checkout < branch_name >     => To navigate to the specific branch     
 ```
 # Merge 
+* Merge will merge the change done on the feature branch to the [main branch as a commit.](https://www.freecodecamp.org/news/the-ultimate-guide-to-git-merge-and-git-rebase/)
 * Always checkout while residing in the destination branch (in that case there no need to mention the dest_branch.)
+* Please read [This article for some difference between Merge Vs Cherrypick Vs Rebase](https://stackoverflow.com/questions/9339429/what-does-cherry-picking-a-commit-with-git-mean)
 ```
 $ git merge <src_branch> <dest_branch>      
 ```
-Selective Merge
+Selective Merge: Select the required commitID to merge on to destination branch.
 ```
 $ git cherrypick <commit_id>
 ```
+# REBASE
+Rebase will re-create the branch, with all the changes in the master branch
 # Stash
 * If we modified a file while residing in the working directory and have not put the file in staging area.
 * Now at this point if you want to take a backup of the changes done to the file and rollback the changes. Then stash will help us do it.
@@ -93,14 +98,12 @@ Git can tag a commit in the repository history so that you find it easier at a l
 # Contents of a tag
     $ git show <pattern>
 # Display list of tags
-    $ git tags
+    $ git tag
 # Push the tags
     # git push --tags
 # Delete a tag
     # git tag -d <tag>
 ```
-# REBASE
-Rebase will re-create the branch, with all the changes in the master branch
 # PUSH/PULL to central repos
 ```
 $ git remote add origin "<repository_url.git>"
@@ -116,7 +119,8 @@ $ git pull                  => Take commit ids from central repo which are not a
 $ echo *.class > .gitignore
 $ git commit -m "Adding git ignore"
 ```
-All the file with class extensions will be ignored
+All the file with class extensions will be ignored.
+* To delete all the untracked files and runtime files.
 ```
 $ git clean -n
         # will show what files will be deleted
